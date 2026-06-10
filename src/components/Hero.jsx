@@ -1,3 +1,4 @@
+import Logo from "./Logo";
 export default function Hero({ darkMode }) {
   return (
     <section
@@ -6,6 +7,9 @@ export default function Hero({ darkMode }) {
         ${darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       <div className="max-w-4xl w-full text-center">
+        <div className="max-w-4xl w-full text-center">
+          <Logo />
+        </div>
         {/* Badge */}
         <div
           className={`inline-block text-xs uppercase tracking-widest font-semibold px-4 py-2 rounded-full border mb-6
