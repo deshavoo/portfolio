@@ -15,57 +15,73 @@ export default function Navbar() {
   const links = ["home", "about", "projects", "skills", "contact"];
 
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl px-4">
-      <nav
-        className="flex items-center justify-between px-6 py-3 rounded-2xl
-                      bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg"
-      >
-        {/* Links (Centered) */}
-        <ul className="hidden md:flex items-center justify-center w-full gap-8 text-sm font-medium text-gray-200">
-          {links.map((item) => (
-            <li
-              key={item}
-              onClick={() => scrollTo(item)}
-              className="cursor-pointer capitalize relative group"
-            >
-              {item}
-
-              {/* underline animation */}
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-400 transition-all group-hover:w-full"></span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white text-xl"
+    <>
+      {/* 🔥 Navbar */}
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl px-4">
+        <nav
+          className="flex items-center justify-between px-6 py-3 rounded-2xl
+                        bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg"
         >
-          ☰
-        </button>
-      </nav>
+          {/* Desktop Links */}
+          <ul className="hidden md:flex items-center justify-center w-full gap-8 text-sm font-medium text-gray-200">
+            {links.map((item) => (
+              <li
+                key={item}
+                onClick={() => scrollTo(item)}
+                className="cursor-pointer capitalize relative group"
+              >
+                {item}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-400 transition-all group-hover:w-full"></span>
+              </li>
+            ))}
+          </ul>
 
-      {/* Mobile Menu */}
+          {/* Mobile Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white text-2xl"
+          >
+            {isOpen ? "✕" : "☰"}
+          </button>
+        </nav>
+      </div>
+
+      {/* 💀 Full Screen Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="mt-3 bg-black/90 backdrop-blur-xl rounded-2xl p-6 text-center space-y-4 border border-white/10 md:hidden"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8"
           >
-            {links.map((item) => (
-              <p
+            {links.map((item, index) => (
+              <motion.p
                 key={item}
                 onClick={() => scrollTo(item)}
-                className="cursor-pointer capitalize hover:text-blue-400 transition"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="text-2xl font-semibold text-white capitalize cursor-pointer hover:text-blue-400 transition"
               >
                 {item}
-              </p>
+              </motion.p>
             ))}
+
+            {/* 🔥 CTA Button */}
+            <motion.button
+              onClick={() => scrollTo("contact")}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mt-6 px-8 py-3 bg-blue-500 text-black rounded-xl font-semibold hover:bg-blue-400 transition"
+            >
+              Hire Me
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }
