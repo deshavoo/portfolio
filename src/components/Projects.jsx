@@ -7,7 +7,7 @@ export default function Projects() {
       desc: "Modern company website with smooth animations and responsive UI.",
       stack: ["Next", "TypeScript", "Tailwind", "Framer"],
       link: "https://skyline-lp.vercel.app/",
-      img: "/public/projects/p2skyline.png",
+      img: "/projects/p2skyline.png",
       badge: "Featured",
     },
     {
@@ -15,14 +15,14 @@ export default function Projects() {
       desc: "Modern business website with responsive design.",
       stack: ["React", "Tailwind", "JS"],
       link: "https://www.servixaos.com/",
-      img: "/public/projects/p1servixaos.png",
+      img: "/projects/p1servixaos.png",
     },
     {
       title: "Company Website",
       desc: "Improved UI/UX during internship.",
       stack: ["React", "CSS", "Git"],
       link: "https://www.contactcars.com/",
-      img: "/public/projects/p3contact.png",
+      img: "/projects/p3contact.png",
     },
     {
       title: "Real Estate App",
