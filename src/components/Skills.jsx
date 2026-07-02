@@ -26,10 +26,7 @@ export default function Skills() {
   ];
 
   return (
-    <section
-      id="skills"
-      className="relative pt-16 pb-24 px-6 bg-[#0a0a0a] text-white overflow-hidden"
-    >
+    <section id="skills" className="relative pt-16 pb-24 px-6  overflow-hidden">
       {/* 🔥 Glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 

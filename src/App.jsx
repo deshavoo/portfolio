@@ -7,7 +7,7 @@ import Skills from "./components/Skills";
 
 export default function App() {
   return (
-    <div>
+    <div className="bg-[#0a0a0a] text-white">
       <Navbar />
       <Hero />
       <About />
