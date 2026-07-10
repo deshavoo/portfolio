@@ -15,9 +15,9 @@ export default function Projects() {
       stack: ["Next", "TypeScript", "Tailwind", "Framer"],
       link: "https://skyline-lp.vercel.app/",
       images: [
-        "/public/projects/skyline1.png",
-        "/public/projects/skyline2.png",
-        "/public/projects/skyline3.png",
+        "/projects/skyline1.png",
+        "/projects/skyline2.png",
+        "/projects/skyline3.png",
       ],
       badge: "Featured",
     },
