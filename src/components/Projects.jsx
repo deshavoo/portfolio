@@ -1,5 +1,12 @@
 "use client";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 export default function Projects() {
   const projects = [
     {
@@ -7,43 +14,59 @@ export default function Projects() {
       desc: "Modern company website with smooth animations and responsive UI.",
       stack: ["Next", "TypeScript", "Tailwind", "Framer"],
       link: "https://skyline-lp.vercel.app/",
-      img: "/projects/p2skyline.png",
+      images: [
+        "/public/projects/skyline1.png",
+        "/public/projects/skyline2.png",
+        "/public/projects/skyline3.png",
+      ],
       badge: "Featured",
     },
     {
       title: "ServixaOS Website",
       desc: "Modern business website with responsive design.",
-      stack: ["React", "Tailwind", "JS"],
+      stack: ["React", "Tailwind", "JavaScript"],
       link: "https://www.servixaos.com/",
-      img: "/projects/p1servixaos.png",
+      images: [
+        "/projects/servixaos1.png",
+        "/projects/serixaos2.png",
+        "/projects/serivxaos3.png",
+      ],
     },
     {
       title: "Company Website",
       desc: "Improved UI/UX during internship.",
       stack: ["React", "CSS", "Git"],
       link: "https://www.contactcars.com/",
-      img: "/projects/p3contact.png",
+      images: [
+        "/projects/contact1.png",
+        "/projects/contact2.png",
+        "/projects/contact3.png",
+      ],
     },
     {
-      title: "Nova Fashoine",
+      title: "Nova Fashion",
       desc: "Product page with cart functionality.",
-      stack: ["html", "css", "javascript"],
-      link: "#",
-      img: "/projects/p3nova.png",
+      stack: ["HTML", "CSS", "JavaScript"],
+      link: "https://nova-test-demo-git-main-deshavoos-projects.vercel.app/",
+      images: [
+        "/projects/nova1.png",
+        "/projects/nova2.png",
+        "/projects/nova3.png",
+      ],
     },
     {
       title: "Real Estate App",
       desc: "Dynamic property listing system.",
       stack: ["React", "API", "Tailwind"],
       link: "#",
-      img: "/projects/realestate.png",
+      images: ["/projects/realestate1.png", "/projects/realestate2.png"],
     },
     {
       title: "E-commerce Page",
       desc: "Product page with cart functionality.",
       stack: ["React", "Context", "Strapi"],
       link: "#",
-      img: "/projects/ecommerce.png",
+      images: ["/projects/ecommerce1.png", "/projects/ecommerce2.png"],
     },
   ];
 
@@ -52,97 +75,78 @@ export default function Projects() {
       id="projects"
       className="relative pt-16 pb-24 px-6 bg-[#0a0a0a] text-white overflow-hidden"
     >
-      {/* 🔥 Glow */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 
-                      w-175 h-175 
-                      bg-blue-500/20 blur-[140px] rounded-full"
-      />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 bg-blue-500/20 blur-[140px] rounded-full" />
 
-      {/* 🔥 Gradient */}
       <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/70 to-black" />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Header */}
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-widest text-blue-400 mb-2">
             My Work
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-bold">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">Featured Projects</h2>
         </div>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group relative rounded-2xl overflow-hidden border border-white/10 
-                         bg-white/5 backdrop-blur-xl
-                         hover:scale-[1.03] transition-all duration-500"
+              className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl hover:-translate-y-2 transition duration-500"
             >
-              {/* 🏆 Badge */}
-              {project.badge && (
-                <span
-                  className="absolute top-4 left-4 z-20 
-                                 bg-blue-500/90 text-xs px-3 py-1 rounded-full text-white shadow"
-                >
-                  {project.badge}
-                </span>
-              )}
+              <div className="relative">
+                {project.badge && (
+                  <span className="absolute top-4 left-4 z-20 bg-blue-600 px-3 py-1 rounded-full text-xs">
+                    {project.badge}
+                  </span>
+                )}
 
-              {/* 🖼 Image */}
-              <div className="h-56 overflow-hidden">
-                <img
-                  src={project.img}
-                  alt={project.title}
-                  className="w-full h-full object-cover 
-                             group-hover:scale-110 transition duration-700"
-                />
+                <Swiper
+                  modules={[Navigation, Pagination, Autoplay]}
+                  navigation
+                  pagination={{ clickable: true }}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  loop
+                  className="h-60"
+                >
+                  {project.images.map((img) => (
+                    <SwiperSlide key={img}>
+                      <img
+                        src={img}
+                        alt={project.title}
+                        className="w-full h-60 object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
 
-              {/* 🔥 Overlay */}
-              <div
-                className="absolute inset-0 
-                              bg-linear-to-t from-black via-black/80 to-transparent 
-                              opacity-0 group-hover:opacity-100 
-                              transition duration-500 flex flex-col justify-end p-6"
-              >
-                <h3 className="text-lg font-bold text-white">
-                  {project.title}
-                </h3>
+              <div className="p-6">
+                <h3 className="text-xl font-bold">{project.title}</h3>
 
-                <p className="text-sm text-gray-300 mt-1">{project.desc}</p>
+                <p className="text-gray-400 mt-2">{project.desc}</p>
 
-                {/* Stack */}
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="flex flex-wrap gap-2 mt-4">
                   {project.stack.map((item) => (
                     <span
                       key={item}
-                      className="text-xs px-2 py-1 bg-white/10 rounded text-white border border-white/10"
+                      className="px-3 py-1 text-xs rounded-full bg-blue-500/20 border border-blue-500/30"
                     >
                       {item}
                     </span>
                   ))}
                 </div>
 
-                {/* Buttons */}
-                <div className="flex gap-4 mt-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="text-sm text-blue-400 hover:underline"
-                  >
-                    Live Demo →
-                  </a>
-
-                  <a
-                    href="#"
-                    className="text-sm text-gray-300 hover:text-white"
-                  >
-                    GitHub
-                  </a>
-                </div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  className="inline-block mt-6 text-blue-400 hover:text-blue-300"
+                >
+                  Live Demo →
+                </a>
               </div>
             </div>
           ))}
