@@ -25,6 +25,13 @@ export default function Projects() {
       img: "/projects/p3contact.png",
     },
     {
+      title: "Nova Fashoine",
+      desc: "Product page with cart functionality.",
+      stack: ["html", "css", "javascript"],
+      link: "#",
+      img: "/projects/p3nova.png",
+    },
+    {
       title: "Real Estate App",
       desc: "Dynamic property listing system.",
       stack: ["React", "API", "Tailwind"],
