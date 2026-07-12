@@ -58,7 +58,7 @@ export default function Projects() {
       title: "Nova Fashion",
       desc: "Product page with cart functionality.",
       stack: ["HTML", "CSS", "JavaScript"],
-      link: "https://nova-test-demo-git-main-deshavoos-projects.vercel.app/",
+      link: "https://nova-test-demo.vercel.app/",
       images: [
         "/projects/nova1.png",
         "/projects/nova2.png",
