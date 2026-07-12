@@ -10,6 +10,18 @@ import "swiper/css/pagination";
 export default function Projects() {
   const projects = [
     {
+      title: "DeshFlix – Movie Streaming Web App",
+      desc: "A premium movie & TV streaming web app inspired by Netflix. Built with React and Tailwind CSS, featuring dynamic API integration, real-time search, category filtering, hover trailer previews, and a modern cinematic UI/UX experience.",
+      stack: ["React", "Tailwind", "Framer Motion", "TMDB API"],
+      link: "https://deshflix.vercel.app/",
+      images: [
+        "/projects/deshflix1.png",
+        "/projects/deshflix2.png",
+        "/projects/deshflix.png",
+      ],
+      badge: "Featured",
+    },
+    {
       title: "Skyline Electrical Website",
       desc: "Modern company website with smooth animations and responsive UI.",
       stack: ["Next", "TypeScript", "Tailwind", "Framer"],
@@ -19,7 +31,6 @@ export default function Projects() {
         "/projects/skyline2.png",
         "/projects/skyline3.png",
       ],
-      badge: "Featured",
     },
     {
       title: "ServixaOS Website",
