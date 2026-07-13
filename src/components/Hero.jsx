@@ -70,7 +70,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="/Mostafa-Hadeer-CV.pdf"
+            href="/public/MOSTAFA-HADEER-2026UP .pdf"
             download
             className="px-7 py-3 rounded-xl border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300"
           >
