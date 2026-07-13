@@ -70,7 +70,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="/public/CV.pdf"
+            href="/CV.pdf"
             download
             className="px-7 py-3 rounded-xl border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300"
           >
