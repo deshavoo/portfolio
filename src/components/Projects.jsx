@@ -23,7 +23,7 @@ export default function Projects() {
     },
     {
       title: "Skyline Electrical Website",
-      desc: "Modern company website with smooth animations and responsive UI.",
+      desc: "A modern corporate website for an electrical company, built with Next.js, TypeScript, Tailwind CSS, and Framer Motion, featuring smooth animations, responsive design, and an interactive user experience.",
       stack: ["Next", "TypeScript", "Tailwind", "Framer"],
       link: "https://skyline-lp.vercel.app/",
       images: [
@@ -34,7 +34,7 @@ export default function Projects() {
     },
     {
       title: "ServixaOS Website",
-      desc: "Modern business website with responsive design.",
+      desc: "A responsive business website built with React, Tailwind CSS, and JavaScript, featuring modern UI components, appointment booking, contact forms, and performance optimization.",
       stack: ["React", "Tailwind", "JavaScript"],
       link: "https://www.servixaos.com/",
       images: [
@@ -45,7 +45,7 @@ export default function Projects() {
     },
     {
       title: "Company Website",
-      desc: "Improved UI/UX during internship.",
+      desc: "A corporate website developed during my Front-End internship using React, Tailwind CSS, and JavaScript, focused on responsive layouts, reusable components, and performance optimization.",
       stack: ["React", "CSS", "Git"],
       link: "https://www.contactcars.com/",
       images: [
@@ -56,7 +56,7 @@ export default function Projects() {
     },
     {
       title: "Nova Fashion",
-      desc: "Product page with cart functionality.",
+      desc: "A modern landing page built with HTML5, CSS3, and JavaScript, featuring smooth animations, responsive design, and clean, user-friendly interfaces.",
       stack: ["HTML", "CSS", "JavaScript"],
       link: "https://nova-test-demo.vercel.app/",
       images: [
