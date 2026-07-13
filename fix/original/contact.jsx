@@ -11,14 +11,13 @@ export default function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
-    setSuccess(false);
 
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        "service_0ldcqv2",
+        "template_pc7cext",
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        "l5AMqt3kPqmat5Gxn"
       )
       .then(
         () => {
@@ -27,7 +26,7 @@ export default function Contact() {
           form.current.reset();
         },
         (error) => {
-          console.error(error);
+          console.log(error);
           setLoading(false);
           alert("Something went wrong ❌");
         }
@@ -72,27 +71,17 @@ export default function Contact() {
 
             <p>
               📧 Email:{" "}
-              <a
-                href="mailto:mostafahadeer909@gmail.com"
-                className="text-blue-400 hover:underline"
-              >
-                mostafahadeer909@gmail.com
-              </a>
+              <span className="text-blue-400">mostafahadeer909@gmail.com</span>
             </p>
 
             <p>
-              📱 Phone:{" "}
-              <a href="tel:+201140027672" className="text-blue-400 hover:underline">
-                01140027672
-              </a>
+              📱 Phone: <span className="text-blue-400">01140027672</span>
             </p>
 
             <p>
               💼 LinkedIn:{" "}
               <a
                 href="https://www.linkedin.com/in/mostafa-hadeer-b2a0bb371"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-blue-400 hover:underline"
               >
                 Profile
@@ -103,8 +92,6 @@ export default function Contact() {
               🐙 GitHub:{" "}
               <a
                 href="https://github.com/deshavoo"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-blue-400 hover:underline"
               >
                 deshavoo
@@ -118,11 +105,7 @@ export default function Contact() {
             onSubmit={sendEmail}
             className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-xl space-y-5"
           >
-            <label htmlFor="user_name" className="sr-only">
-              Your Name
-            </label>
             <input
-              id="user_name"
               type="text"
               name="user_name"
               placeholder="Your Name"
@@ -131,11 +114,7 @@ export default function Contact() {
                          focus:border-blue-400 outline-none text-white placeholder-gray-400"
             />
 
-            <label htmlFor="user_email" className="sr-only">
-              Your Email
-            </label>
             <input
-              id="user_email"
               type="email"
               name="user_email"
               placeholder="Your Email"
@@ -144,11 +123,7 @@ export default function Contact() {
                          focus:border-blue-400 outline-none text-white placeholder-gray-400"
             />
 
-            <label htmlFor="message" className="sr-only">
-              Your Message
-            </label>
             <textarea
-              id="message"
               name="message"
               placeholder="Your Message"
               rows="5"
@@ -167,7 +142,7 @@ export default function Contact() {
             </button>
 
             {success && (
-              <p className="text-green-400 text-sm text-center" role="status">
+              <p className="text-green-400 text-sm text-center">
                 Message sent successfully ✅
               </p>
             )}

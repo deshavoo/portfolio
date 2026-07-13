@@ -128,7 +128,6 @@ export default function Projects() {
                       <img
                         src={img}
                         alt={project.title}
-                        loading="lazy"
                         className="w-full h-60 object-cover"
                       />
                     </SwiperSlide>
@@ -155,7 +154,6 @@ export default function Projects() {
                 <a
                   href={project.link}
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-block mt-6 text-blue-400 hover:text-blue-300"
                 >
                   Live Demo →

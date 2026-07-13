@@ -80,7 +80,7 @@ export default function Hero() {
           <a
             href="https://github.com/deshavoo"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
             className="px-7 py-3 rounded-xl border border-white/10 text-white hover:border-blue-400 hover:text-blue-400 transition duration-300"
           >
             GitHub →
