@@ -24,7 +24,6 @@ export default function Logo() {
       }}
       className="mx-auto mb-6"
     >
-      {/* D */}
       <motion.path
         d="M40 40 L40 160 Q120 160 120 100 Q120 40 40 40"
         stroke="#3b82f6"
@@ -34,8 +33,6 @@ export default function Logo() {
         animate={{ pathLength: 1 }}
         transition={{ duration: 1.5 }}
       />
-
-      {/* V */}
       <motion.path
         d="M120 40 L160 160 L200 40"
         stroke="#60a5fa"

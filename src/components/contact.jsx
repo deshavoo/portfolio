@@ -15,10 +15,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -33,7 +33,6 @@ export default function Contact() {
         }
       );
   };
-
   return (
     <section
       id="contact"
@@ -82,7 +81,10 @@ export default function Contact() {
 
             <p>
               📱 Phone:{" "}
-              <a href="tel:+201140027672" className="text-blue-400 hover:underline">
+              <a
+                href="tel:+201140027672"
+                className="text-blue-400 hover:underline"
+              >
                 01140027672
               </a>
             </p>

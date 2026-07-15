@@ -85,18 +85,15 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative pt-20 pb-28 px-6 overflow-hidden">
-      {/* Glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2
         w-150 h-150
         bg-blue-500/20 blur-[140px] rounded-full"
       />
 
-      {/* Background */}
       <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/80 to-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <p className="uppercase tracking-[6px] text-blue-400 text-sm mb-3">
             What I Use
@@ -113,7 +110,6 @@ export default function Skills() {
           </p>
         </div>
 
-        {/* Cards */}
         <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
           {skills.map((group) => (
             <div
@@ -128,7 +124,6 @@ export default function Skills() {
               hover:border-blue-400/40
               hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
             >
-              {/* Title */}
               <div className="flex justify-between items-center mb-4">
                 <h3 className="uppercase tracking-wider text-blue-400 text-sm font-semibold">
                   {group.title}
@@ -137,7 +132,6 @@ export default function Skills() {
                 <span className="text-xs text-gray-400">{group.level}%</span>
               </div>
 
-              {/* Progress */}
               <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden mb-6">
                 <div
                   className="h-full rounded-full bg-linear-to-r from-blue-500 to-cyan-400 transition-all duration-700"
@@ -145,7 +139,6 @@ export default function Skills() {
                 />
               </div>
 
-              {/* Skills */}
               <div className="flex flex-wrap gap-3">
                 {group.items.map((skill) => (
                   <span
