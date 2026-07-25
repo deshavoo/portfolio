@@ -1,3 +1,23 @@
+"use client";
+
+import { motion } from "motion/react";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const card = {
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 export default function Skills() {
   const skills = [
     {
@@ -88,18 +108,24 @@ export default function Skills() {
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2
         w-150 h-150
-        bg-blue-500/20 blur-[140px] rounded-full"
+        bg-blue-600/20 blur-[140px] rounded-full"
       />
 
       <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/80 to-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-16"
+        >
           <p className="uppercase tracking-[6px] text-blue-400 text-sm mb-3">
             What I Use
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
             Skills & Technologies
           </h2>
 
@@ -108,21 +134,29 @@ export default function Skills() {
             software engineering fundamentals, and strong knowledge of computer
             systems and IT infrastructure.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          className="grid gap-7 md:grid-cols-2 xl:grid-cols-3"
+        >
           {skills.map((group) => (
-            <div
+            <motion.div
               key={group.title}
+              variants={card}
+              whileHover={{ y: -6 }}
               className="group rounded-3xl
               border border-white/10
-              bg-white/5
+              bg-white/4
               backdrop-blur-xl
               p-7
+              shadow-[0_8px_40px_rgba(0,0,0,0.3)]
               transition-all duration-500
-              hover:-translate-y-2
-              hover:border-blue-400/40
-              hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+              hover:border-blue-500/40
+              hover:shadow-[0_12px_50px_rgba(37,99,235,0.18)]"
             >
               <div className="flex justify-between items-center mb-4">
                 <h3 className="uppercase tracking-wider text-blue-400 text-sm font-semibold">
@@ -133,9 +167,16 @@ export default function Skills() {
               </div>
 
               <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden mb-6">
-                <div
-                  className="h-full rounded-full bg-linear-to-r from-blue-500 to-cyan-400 transition-all duration-700"
-                  style={{ width: `${group.level}%` }}
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${group.level}%` }}
+                  viewport={{ once: true, amount: 0.6 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: 0.15,
+                  }}
+                  className="h-full rounded-full bg-linear-to-r from-blue-600 to-cyan-400"
                 />
               </div>
 
@@ -160,9 +201,9 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

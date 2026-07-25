@@ -13,34 +13,38 @@ export default function Logo() {
         opacity: 1,
         scale: 1,
         filter: [
-          "drop-shadow(0 0 0px #3b82f6)",
-          "drop-shadow(0 0 15px #3b82f6)",
-          "drop-shadow(0 0 5px #3b82f6)",
+          "drop-shadow(0 0 0px #1d4ed8)",
+          "drop-shadow(0 0 18px #1d4ed8)",
+          "drop-shadow(0 0 6px #1d4ed8)",
         ],
       }}
+      whileHover={{ scale: 1.06 }}
       transition={{
         duration: 1,
-        filter: { duration: 2, repeat: Infinity, repeatType: "mirror" },
+        scale: { type: "spring", stiffness: 260, damping: 18 },
+        filter: { duration: 2.4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" },
       }}
-      className="mx-auto mb-6"
+      className="mx-auto mb-6 cursor-pointer"
     >
       <motion.path
         d="M40 40 L40 160 Q120 160 120 100 Q120 40 40 40"
-        stroke="#3b82f6"
+        stroke="#1d4ed8"
         strokeWidth="4"
+        strokeLinecap="round"
         fill="transparent"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
       />
       <motion.path
         d="M120 40 L160 160 L200 40"
         stroke="#60a5fa"
         strokeWidth="4"
+        strokeLinecap="round"
         fill="transparent"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
+        transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
       />
     </motion.svg>
   );
