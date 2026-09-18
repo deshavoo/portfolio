@@ -124,7 +124,7 @@ export default function Hero() {
             Get in Touch
           </motion.a>
           <motion.a
-            href="/CV.pdf"
+            href="/MostafaHadeerZakariaUpCv.pdf"
             download
             whileHover={{
               scale: 1.05,
