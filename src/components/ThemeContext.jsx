@@ -14,11 +14,6 @@ import {
 const STORAGE_KEY = "portfolio-theme";
 const ThemeContext = createContext(null);
 
-/**
- * Reads the theme that should be applied before React hydrates,
- * so there is no flash of the wrong theme on load.
- * Priority: saved theme -> system preference -> "dark" (default).
- */
 function getInitialTheme() {
   if (typeof window === "undefined") return "dark";
 
@@ -52,7 +47,6 @@ export function ThemeProvider({ children }) {
     }
   }, [theme]);
 
-  // Follow system preference changes only if the user hasn't chosen explicitly.
   useEffect(() => {
     const media = window.matchMedia?.("(prefers-color-scheme: light)");
     if (!media) return;
@@ -74,7 +68,6 @@ export function ThemeProvider({ children }) {
   }, []);
 
   const applyTheme = useCallback((next) => {
-    // Respect prefers-reduced-motion: skip the animated view transition.
     const prefersReducedMotion = window.matchMedia?.(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -82,7 +75,6 @@ export function ThemeProvider({ children }) {
     if (document.startViewTransition && !prefersReducedMotion) {
       document.startViewTransition(() => setTheme(next));
     } else {
-      // Graceful fallback — plain state update, CSS transitions handle the rest.
       setTheme(next);
     }
   }, []);

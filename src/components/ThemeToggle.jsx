@@ -20,11 +20,11 @@ export default function ThemeToggle() {
       whileTap={{ scale: 0.92 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
       className="relative flex items-center justify-center w-10 h-10 rounded-xl
-                 border border-[var(--border)] bg-[var(--surface)]
-                 text-[var(--text-secondary)] hover:text-[var(--accent)]
-                 hover:border-[var(--accent)]/50 transition-colors duration-300
+                 border border-(--border) bg-(--surface)
+                 text-(--text-secondary) hover:text-(--accent)
+                 hover:border-(--accent)/50 transition-colors duration-300
                  focus-visible:outline-none focus-visible:ring-2
-                 focus-visible:ring-[var(--accent)]/60 focus-visible:ring-offset-0"
+                 focus-visible:ring-(--accent)/60 focus-visible:ring-offset-0"
     >
       <motion.div
         initial={false}

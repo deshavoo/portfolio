@@ -14,13 +14,11 @@ In your root layout (`app/layout.jsx` for Next.js App Router):
 
 ```jsx
 import { ThemeProvider } from "./ThemeContext";
-import "./theme.css"; // or paste its contents into globals.css
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Prevents a flash of the wrong theme before React hydrates */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -51,8 +49,7 @@ export default function RootLayout({ children }) {
 ```jsx
 import Footer from "./Footer";
 
-// ...at the end of your page, after <Contact />
-<Footer />
+<Footer />;
 ```
 
 ## 3. Nothing else changes

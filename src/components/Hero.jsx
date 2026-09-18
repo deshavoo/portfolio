@@ -98,7 +98,7 @@ export default function Hero() {
           </span>{" "}
           with{" "}
           <span className="text-white font-semibold">
-            2+ years of experience
+            3+ years of experience
           </span>{" "}
           and a strong{" "}
           <span className="text-blue-400 font-semibold">Computer Science</span>{" "}
@@ -174,19 +174,19 @@ export default function Hero() {
           className="grid grid-cols-3 max-w-xl mx-auto border border-white/10 rounded-2xl bg-white/4 backdrop-blur-lg overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.35)]"
         >
           <div className="py-6 border-r border-white/10">
-            <h3 className="text-3xl font-bold text-blue-400">2+</h3>
+            <h3 className="text-3xl font-bold text-blue-400">3+</h3>
             <p className="text-xs text-gray-400 mt-2 uppercase tracking-wider">
               Years Experience
             </p>
           </div>
           <div className="py-6 border-r border-white/10">
-            <h3 className="text-3xl font-bold text-blue-400">8+</h3>
+            <h3 className="text-3xl font-bold text-blue-400">10+</h3>
             <p className="text-xs text-gray-400 mt-2 uppercase tracking-wider">
               Projects Completed
             </p>
           </div>
           <div className="py-6">
-            <h3 className="text-3xl font-bold text-blue-400">20+</h3>
+            <h3 className="text-3xl font-bold text-blue-400">25+</h3>
             <p className="text-xs text-gray-400 mt-2 uppercase tracking-wider">
               Technologies
             </p>

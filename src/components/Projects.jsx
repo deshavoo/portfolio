@@ -22,35 +22,6 @@ const card = {
   },
 };
 
-// -----------------------------------------------------------------------
-// PROJECTS DATA
-// -----------------------------------------------------------------------
-// status: "completed" | "in-progress" | "maintenance"
-//
-// Every project carries a single `media` object:
-//   media: {
-//     type: "image" | "video",
-//     src: string | string[],   // array of images renders a carousel
-//     poster?: string,          // optional poster frame for videos
-//   }
-//
-// TODO: Add project image(s)
-// Example:
-// import deshflixCover from "@/assets/projects/deshflix-cover.webp";
-// then set media: { type: "image", src: [deshflixCover] }
-//
-// TODO: Add project preview video
-// Example:
-// import previewVideo from "@/assets/projects/theme-preview.mp4";
-// then set media: { type: "video", src: previewVideo, poster: "" }
-//
-// If src is empty/missing, the card automatically renders a premium
-// "Preview Coming Soon" placeholder (image or video flavor).
-//
-// All status-driven UI (ribbon / badge / overlay / CTA / tooltip) is
-// controlled centrally in `statusConfig` below — never hardcode a
-// per-project status check inside the JSX.
-// -----------------------------------------------------------------------
 const projects = [
   {
     id: 1,
@@ -58,7 +29,6 @@ const projects = [
     description:
       "A premium movie & TV streaming web app inspired by Netflix. Built with React and Tailwind CSS, featuring dynamic API integration, real-time search, category filtering, hover trailer previews, and a modern cinematic UI/UX experience.",
     tech: ["React", "Tailwind", "Framer Motion", "TMDB API"],
-    // TODO: Add project image(s)
     media: {
       type: "image",
       src: [
@@ -67,9 +37,7 @@ const projects = [
         "/projects/deshflix.png",
       ],
     },
-    // TODO: Replace with Live Demo URL
     url: "https://deshflix.vercel.app/",
-    // TODO: Replace with GitHub Repository URL
     github: "#",
     status: "completed",
     badge: "Featured",
@@ -80,7 +48,6 @@ const projects = [
     description:
       "A modern corporate website for an electrical company, built with Next.js, TypeScript, Tailwind CSS, and Framer Motion, featuring smooth animations, responsive design, and an interactive user experience.",
     tech: ["Next", "TypeScript", "Tailwind", "Framer"],
-    // TODO: Add project image(s)
     media: {
       type: "image",
       src: [
@@ -89,9 +56,7 @@ const projects = [
         "/projects/skyline3.png",
       ],
     },
-    // TODO: Replace with Live Demo URL
     url: "https://skyline-lp.vercel.app/",
-    // TODO: Replace with GitHub Repository URL
     github: "#",
     status: "completed",
   },
@@ -101,7 +66,6 @@ const projects = [
     description:
       "A responsive business website built with React, Tailwind CSS, and JavaScript, featuring modern UI components, appointment booking, contact forms, and performance optimization.",
     tech: ["React", "Tailwind", "JavaScript"],
-    // TODO: Add project image(s)
     media: {
       type: "image",
       src: [
@@ -110,9 +74,7 @@ const projects = [
         "/projects/serivxaos3.png",
       ],
     },
-    // TODO: Replace with Live Demo URL
     url: "https://www.servixaos.com/",
-    // TODO: Replace with GitHub Repository URL
     github: "#",
     status: "completed",
   },
@@ -122,7 +84,6 @@ const projects = [
     description:
       "A corporate website developed during my Front-End internship using React, Tailwind CSS, and JavaScript, focused on responsive layouts, reusable components, and performance optimization.",
     tech: ["React", "CSS", "Git"],
-    // TODO: Add project image(s)
     media: {
       type: "image",
       src: [
@@ -131,9 +92,7 @@ const projects = [
         "/projects/contact3.png",
       ],
     },
-    // TODO: Replace with Live Demo URL
     url: "https://www.contactcars.com/",
-    // TODO: Replace with GitHub Repository URL
     github: "#",
     status: "completed",
   },
@@ -143,7 +102,6 @@ const projects = [
     description:
       "A modern landing page built with HTML5, CSS3, and JavaScript, featuring smooth animations, responsive design, and clean, user-friendly interfaces.",
     tech: ["HTML", "CSS", "JavaScript"],
-    // TODO: Add project image(s)
     media: {
       type: "image",
       src: [
@@ -152,9 +110,7 @@ const projects = [
         "/projects/nova3.png",
       ],
     },
-    // TODO: Replace with Live Demo URL
     url: "https://nova-test-demo.vercel.app/",
-    // TODO: Replace with GitHub Repository URL
     github: "#",
     status: "completed",
   },
@@ -163,17 +119,13 @@ const projects = [
     title: "Real Estate App",
     description: "Dynamic property listing system.",
     tech: ["React", "API", "Tailwind"],
-    // TODO: Add project image(s)
     media: {
       type: "image",
       src: ["/projects/realestate1.png", "/projects/realestate2.png"],
     },
-    // TODO: Replace with Live Demo URL
     url: "#",
-    // TODO: Replace with GitHub Repository URL
     github: "#",
-    // Temporarily unavailable — kept visible with a maintenance ribbon
-    // instead of being removed. Flip back to "completed" once it's back up.
+
     status: "maintenance",
   },
   {
@@ -181,14 +133,11 @@ const projects = [
     title: "E-commerce Page",
     description: "Product page with cart functionality.",
     tech: ["React", "Context", "Strapi"],
-    // TODO: Add project image(s)
     media: {
       type: "image",
       src: ["/projects/ecommerce1.png", "/projects/ecommerce2.png"],
     },
-    // TODO: Replace with Live Demo URL
     url: "#",
-    // TODO: Replace with GitHub Repository URL
     github: "#",
     status: "maintenance",
   },
@@ -201,22 +150,29 @@ const projects = [
     media: {
       type: "video",
       src: "/video/dehavoo-theme .mp4",
-      // TODO: Add poster image
       poster: "",
     },
-    // TODO: Replace with final production URL if needed
     url: "#",
-    // TODO: Replace with GitHub Repository URL
+    github: "#",
+    status: "in-progress",
+  },
+  {
+    id: 9,
+    title: "Ria Store Lookbook & Storefront - Minimalist Luxury E-Commerce",
+    description:
+      "An elegant E-commerce storefront and lookbook web application designed for luxury fashion brands. Engineered with a responsive multi-page layout, custom Tailwind CSS styling, dynamic collection views, and a sophisticated minimalist aesthetic.",
+    tech: ["React", "Tailwind", "Framer Motion", "React Icons", "Lucide React"],
+    media: {
+      type: "image",
+      src: ["/projects/ria1.png", "/projects/ria2.png", "/projects/ria3.png"],
+    },
+    url: "https://riaa-store.vercel.app/",
     github: "#",
     status: "completed",
+    badge: "Featured",
   },
 ];
 
-// -----------------------------------------------------------------------
-// STATUS CONFIG — single source of truth for how each status renders.
-// Add a new status here and every card that uses it picks it up
-// automatically; no per-project conditionals needed in the JSX.
-// -----------------------------------------------------------------------
 const statusConfig = {
   "in-progress": {
     variant: "pill",
@@ -268,10 +224,6 @@ function VideoPlaceholder() {
   );
 }
 
-// -----------------------------------------------------------------------
-// ProjectImage — renders a single image, or a Swiper carousel when the
-// project has more than one screenshot.
-// -----------------------------------------------------------------------
 function ProjectImage({ media, title }) {
   const sources = Array.isArray(media?.src)
     ? media.src
@@ -318,10 +270,6 @@ function ProjectImage({ media, title }) {
   );
 }
 
-// -----------------------------------------------------------------------
-// ProjectVideo — muted, autoplaying preview loop. Falls back to a
-// premium placeholder when no source is available yet.
-// -----------------------------------------------------------------------
 function ProjectVideo({ media }) {
   if (!media?.src) return <VideoPlaceholder />;
 
@@ -339,10 +287,6 @@ function ProjectVideo({ media }) {
   );
 }
 
-// -----------------------------------------------------------------------
-// StatusBadge — soft pulsing glass pill, used by the "pill" variant
-// (e.g. in-progress).
-// -----------------------------------------------------------------------
 function StatusBadge({ config }) {
   return (
     <div className="absolute top-4 left-4 z-20 group/badge">
@@ -370,11 +314,6 @@ function StatusBadge({ config }) {
   );
 }
 
-// -----------------------------------------------------------------------
-// MaintenanceRibbon — premium diagonal corner ribbon, used by the
-// "ribbon" variant (e.g. maintenance). Subtle shimmer sweep, glass
-// finish, and a hover tooltip explaining the status.
-// -----------------------------------------------------------------------
 function MaintenanceRibbon({ config }) {
   return (
     <div className="absolute inset-0 z-30 pointer-events-none">
@@ -418,12 +357,6 @@ function LockIcon() {
   );
 }
 
-// -----------------------------------------------------------------------
-// ProjectMedia — dispatches to <ProjectImage /> or <ProjectVideo />
-// based on media.type, and renders the correct status indicator
-// (pill / ribbon) purely from statusConfig[project.status].variant.
-// ProjectCard never needs to know any of this.
-// -----------------------------------------------------------------------
 function ProjectMedia({ project }) {
   const config = statusConfig[project.status];
   const isSpecial = Boolean(config);
@@ -452,7 +385,6 @@ function ProjectMedia({ project }) {
         )}
       </div>
 
-      {/* Premium "under construction" treatment, shared by every special status */}
       {isSpecial && (
         <>
           <AnimatedGridOverlay />
@@ -480,10 +412,6 @@ function AnimatedGridOverlay() {
   );
 }
 
-// -----------------------------------------------------------------------
-// ProjectCard — layout/content only. No media logic, no status logic;
-// both are fully delegated to <ProjectMedia /> and `statusConfig`.
-// -----------------------------------------------------------------------
 function ProjectCard({ project }) {
   const config = statusConfig[project.status];
   const isSpecial = Boolean(config);

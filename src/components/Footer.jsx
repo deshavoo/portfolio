@@ -26,8 +26,6 @@ const TECHNOLOGIES = [
 ];
 
 function TechTrack() {
-  // Rendered twice back-to-back; the track scrolls exactly -50% so the
-  // seam between the two copies is invisible and the loop never resets.
   return (
     <div className="footer-marquee-track">
       {[0, 1].map((copy) => (

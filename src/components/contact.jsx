@@ -45,18 +45,15 @@ export default function Contact() {
       id="contact"
       className="relative pt-16 pb-24 px-6 bg-[#0a0a0a] text-white overflow-hidden"
     >
-      {/* 🔥 Glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 
                       w-175 h-175 
                       bg-blue-600/20 blur-[140px] rounded-full"
       />
 
-      {/* 🔥 Gradient */}
       <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/70 to-black" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,9 +75,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 gap-12">
-          {/* 💎 Info Card */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -135,7 +130,6 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          {/* 💎 Form */}
           <motion.form
             ref={form}
             onSubmit={sendEmail}
