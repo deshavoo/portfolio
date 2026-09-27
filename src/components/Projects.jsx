@@ -171,6 +171,34 @@ const projects = [
     status: "completed",
     badge: "Featured",
   },
+  {
+    id: 10,
+    title: "KOPÍ — Premium Specialty Coffee",
+    description:
+      "A premium café landing page built with React, Tailwind CSS, and Framer Motion, featuring a refined dark aesthetic, responsive design, interactive sections, and smooth animations.",
+    tech: [
+      "React.js",
+      "Vite",
+      "JavaScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+      "Responsive Design",
+      "Google Maps API",
+    ],
+    media: {
+      type: "image",
+      src: [
+        "/projects/kopi1.png",
+        "/projects/kopi2.png",
+        "/projects/kopi3.png",
+      ],
+    },
+    url: "https://kopi-cafe-lyart.vercel.app/",
+    github: "https://kopi-cafe-lyart.vercel.app/",
+    status: "completed",
+    badge: "Featured",
+  },
 ];
 
 const statusConfig = {
