@@ -34,6 +34,34 @@ const card = {
 
 const projects = [
   {
+    id: 11,
+    title: "Law Firm — Legal Services Landing Page",
+    description:
+      "A premium Arabic RTL landing page for a law firm, featuring legal practice areas, work process, testimonials, FAQ accordion, contact form, WhatsApp integration, and a sophisticated dark-gold visual identity.",
+    tech: [
+      "React.js",
+      "Vite",
+      "JavaScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+      "Responsive Design",
+    ],
+    media: {
+      type: "image",
+      src: [
+        "/projects/lawfirm1.png",
+        "/projects/lawfirm2.png",
+        "/projects/lawfirm3.png",
+      ],
+    },
+    url: "https://law-firm-landing-page-swart.vercel.app/L",
+    github: "https://law-firm-landing-page-swart.vercel.app/",
+    status: "completed",
+    badge: "Featured",
+  },
+
+  {
     id: 10,
     title: "KOPÍ — Premium Specialty Coffee",
     description:
@@ -64,7 +92,7 @@ const projects = [
 
   {
     id: 9,
-    title: "Ria Store Lookbook & Storefront - Minimalist Luxury E-Commerce",
+    title: "Ria Store Lookbook & Storefront",
     description:
       "An elegant E-commerce storefront and lookbook web application designed for luxury fashion brands. Engineered with a responsive multi-page layout, custom Tailwind CSS styling, dynamic collection views, and a sophisticated minimalist aesthetic.",
     tech: ["React", "Tailwind", "Framer Motion", "React Icons", "Lucide React"],
@@ -524,65 +552,81 @@ function ProjectCard({ project }) {
       whileHover={{
         y: -8,
       }}
-      className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] shadow-[0_8px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-500 hover:border-blue-400/25 hover:shadow-[0_20px_60px_rgba(37,99,235,0.14)]"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] shadow-[0_8px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-500 hover:border-blue-400/25 hover:shadow-[0_20px_60px_rgba(37,99,235,0.14)]"
     >
-      <ProjectMedia project={project} />
+      {/* Fixed Media Height */}
+      <div className="h-60 shrink-0">
+        <ProjectMedia project={project} />
+      </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-bold">{project.title}</h3>
+      {/* Card Content */}
+      <div className="flex flex-1 flex-col p-6">
+        {/* Title */}
+        <h3 className="line-clamp-2 min-h-14 text-xl font-bold leading-7">
+          {project.title}
+        </h3>
 
-        <p className="mt-2 text-gray-400">{project.description}</p>
+        {/* Description */}
+        <p className="mt-3 line-clamp-4 min-h-24 text-sm leading-6 text-gray-400">
+          {project.description}
+        </p>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tech.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-blue-500/25 bg-blue-500/15 px-3 py-1 text-xs text-blue-300"
-            >
-              {item}
-            </span>
-          ))}
+        {/* Technologies */}
+        <div className="mt-5 min-h-18">
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-blue-500/25 bg-blue-500/15 px-3 py-1 text-xs text-blue-300"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {isSpecial ? (
-          <motion.button
-            type="button"
-            disabled
-            aria-disabled="true"
-            title={config.tooltip}
-            whileHover={{
-              x: 2,
-            }}
-            className="mt-6 inline-flex cursor-not-allowed select-none items-center gap-1 text-gray-500"
-          >
-            {config.cta}
-          </motion.button>
-        ) : (
-          <div className="mt-6 flex items-center gap-5">
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/link inline-flex items-center gap-1 text-blue-400 transition-colors hover:text-blue-300"
+        {/* Buttons */}
+        <div className="mt-auto pt-6">
+          {isSpecial ? (
+            <motion.button
+              type="button"
+              disabled
+              aria-disabled="true"
+              title={config.tooltip}
+              whileHover={{
+                x: 2,
+              }}
+              className="inline-flex cursor-not-allowed select-none items-center gap-1 text-sm text-gray-500"
             >
-              Live Demo
-              <span className="transition-transform duration-300 group-hover/link:translate-x-1">
-                →
-              </span>
-            </a>
-
-            {project.github !== "#" && (
+              {config.cta}
+            </motion.button>
+          ) : (
+            <div className="flex items-center gap-5">
               <a
-                href={project.github}
+                href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-400 transition-colors hover:text-gray-200"
+                className="group/link inline-flex items-center gap-1 text-blue-400 transition-colors hover:text-blue-300"
               >
-                GitHub
+                Live Demo
+                <span className="transition-transform duration-300 group-hover/link:translate-x-1">
+                  →
+                </span>
               </a>
-            )}
-          </div>
-        )}
+
+              {project.github !== "#" && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-400 transition-colors hover:text-gray-200"
+                >
+                  GitHub
+                </a>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   );
@@ -640,7 +684,7 @@ export default function Projects() {
             once: true,
             amount: 0.1,
           }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid auto-rows-fr gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
